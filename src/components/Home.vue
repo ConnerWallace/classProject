@@ -1,13 +1,15 @@
 <template>
-  <div>
-    <h1>Home</h1>
-    <p>Here is some information. This is the home page</p>
-  </div>
+<Calendar/>
+
 </template>
 
 <script>
+import Calendar from './Calendar.vue'
 export default {
-  name: 'Home' //this is the name of the component
+  name: 'Home', //this is the name of the component,
+  components: {
+    'Calendar': Calendar
+  }
 }
 </script>
 <style>

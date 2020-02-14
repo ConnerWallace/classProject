@@ -14,8 +14,10 @@
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2",
     "vue": "^2.6.11",
+    "vue-cal": "^2.24.0",
     "vue-navigation-bar": "^2.0.0",
-    "vue-router": "^3.1.5"
+    "vue-router": "^3.1.5",
+    "vue2-simple-calendar": "^1.0.8"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",
