@@ -1,5 +1,5 @@
 <template>
-  <VueCal :time="false" hide-weekends :events=events />
+  <VueCal :time="true" hide-weekends :events=events />
 </template>
 
 <script>
