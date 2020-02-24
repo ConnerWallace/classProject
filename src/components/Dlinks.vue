@@ -13,11 +13,10 @@
 </template>
 
 <script>
-import Button from './Button.vue'
 export default {
   name: 'Dlinks', //this is the name of the component,
   components: {
-    'Button': Button,
+    
   }
 }
 
