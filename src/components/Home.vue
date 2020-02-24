@@ -22,6 +22,33 @@ export default {
     'Calendar': Calendar,
     'Assignments': Assignments,
     'Button': Button,
+    
+  }
+   ,data() {
+    return {
+      links: [
+        {
+          id: 0,
+          text: 'Current Courses',
+          page:'/CurrentCourses'
+        },
+        {
+          id: 1,
+          text: 'Direct Links',
+          page:'/DirectLinks'
+        },
+        {
+          id: 2,
+          text: 'Records',
+          page:'/Records'
+        },
+        {
+          id: 3,
+          text: 'Contacts',
+          page:'/Contacts'
+        }
+      ]
+    }
   }
 }
 
