@@ -2,12 +2,12 @@
 <template>
   <div>
     <h1>Student Records</h1>
-    <b-col lg="4" class="pb-2"><b-button size="lg" href="/Past Records" >Records</b-button></b-col>
+    <b-col lg="4" class="pb-2"><b-button size="lg" href="/Past Records" >Past Records</b-button></b-col>
   <p>
-    <ul>
-      <li>Curent Grades: {{grades}}</li>
+    <ul id="Student Records">
+      <li>Current Classes:<li>
+      <li v-for="record in records" v-bind:key="record.id">{{record.className + " - " + record.grade}} </li>
       <li>Overall GPA: {{gpa}}</li>
-      <li>Past Records: {{pastRecords}}</li>
     </ul>
   </p>
   </div>
@@ -15,11 +15,16 @@
 
 <script>
 export default {
-  name: 'Student',
   data(){
+    
     return {
-      grades: 'Class 1 - A Class 2 - B',
-      gpa: 'Overall GPA: 3.47',
+      records:[
+      {id: 0, className: "CS 101", grade: 96},
+      {id: 1, className: "MATH 101", grade: 85},
+      {id: 2, className: "COMM 101", grade: 85},
+      {id: 3, className: "BIO 101", grade: 74}
+    ],
+      gpa: '3.47',
       
     }
   }

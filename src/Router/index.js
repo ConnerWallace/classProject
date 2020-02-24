@@ -7,6 +7,7 @@ import About from '@/components/About'
 import Contact from '@/components/Contact'
 import Login from '@/components/Login'
 import Contacts from '@/components/Contacts'
+import Records from '@/components/Records'
 
 Vue.use(Router)
 
@@ -41,6 +42,11 @@ export default new Router({
       path: '/contacts',
       name: 'Contacts',
       component: Contacts
+    },
+    {
+      path: '/records',
+      name: 'Records',
+      component: Records
     }
   ]
 })
