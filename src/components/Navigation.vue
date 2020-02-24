@@ -8,6 +8,7 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item href="#/home">Home</b-nav-item>
+        <b-nav-item href="#/contacts">Contacts</b-nav-item>
         <b-nav-item href="#" disabled>Disabled</b-nav-item>
       </b-navbar-nav>
 
@@ -64,6 +65,11 @@ export default {
           id: 3,
           text: 'Contact',
           page:'/Contact'
+        },
+        {
+          id: 4,
+          text: 'Contacts',
+          page:'/Contacts'
         }
       ]
     }
