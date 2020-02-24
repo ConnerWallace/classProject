@@ -6,6 +6,7 @@ import Home from '@/components/Home'
 import About from '@/components/About'
 import Contact from '@/components/Contact'
 import Dlinks from '@/components/Dlinks'
+import UserLinks from '@/components/UserLinks'
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/dlinks',
       name: 'DirectLinks',
       component: Dlinks
+    },
+    {
+      path: '/userlinks',
+      name: 'UserLinks',
+      component: UserLinks
     }
   ]
 })
