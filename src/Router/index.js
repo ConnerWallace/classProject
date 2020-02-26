@@ -10,6 +10,8 @@ import Courses from '@/components/Courses'
 import Contacts from '@/components/Contacts'
 import Account from '@/components/Account'
 import Records from '@/components/Records'
+import Dlinks from '@/components/Dlinks'
+import UserLinks from '@/components/UserLinks'
 
 Vue.use(Router)
 
@@ -59,6 +61,16 @@ export default new Router({
       path: '/records',
       name: 'Records',
       component: Records
+    },
+    {
+      path: '/dlinks',
+      name: 'DirectLinks',
+      component: Dlinks
+    },
+    {
+      path: '/userlinks',
+      name: 'UserLinks',
+      component: UserLinks
     }
   ]
 })
