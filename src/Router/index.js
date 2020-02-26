@@ -8,6 +8,7 @@ import Contact from '@/components/Contact'
 import Login from '@/components/Login'
 import Courses from '@/components/Courses'
 import Contacts from '@/components/Contacts'
+import Account from '@/components/Account'
 
 Vue.use(Router)
 
@@ -47,6 +48,11 @@ export default new Router({
       path: '/contacts',
       name: 'Contacts',
       component: Contacts
+    },
+    {
+      path: '/account',
+      name: 'Account',
+      component: Account
     }
   ]
 })
