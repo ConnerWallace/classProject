@@ -9,6 +9,7 @@ import Login from '@/components/Login'
 import Courses from '@/components/Courses'
 import Contacts from '@/components/Contacts'
 import Account from '@/components/Account'
+import Records from '@/components/Records'
 
 Vue.use(Router)
 
@@ -53,6 +54,11 @@ export default new Router({
       path: '/account',
       name: 'Account',
       component: Account
+    },
+    {
+      path: '/records',
+      name: 'Records',
+      component: Records
     }
   ]
 })
