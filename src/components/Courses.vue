@@ -2,18 +2,18 @@
   <div id="coursesContainer">
     <b-list-group horizontal>
       <b-list-group-item v-for="course in courses" v-bind:key="course.id">
-      <b-card
-        :title="course.title"
-        :img-src="course.imgSrc"
-        :img-alt="course.imgAlt"
-        img-top
-        :tag="course.tag"
-        :class="course.class"
-      >
-        <b-card-text></b-card-text>
+        <b-card
+          :title="course.title"
+          :img-src="course.imgSrc"
+          :img-alt="course.imgAlt"
+          img-top
+          :tag="course.tag"
+          :class="course.class"
+        >
+          <b-card-text></b-card-text>
 
-        <b-button href="#" variant="primary">Enter Class</b-button>
-      </b-card>,
+          <b-button href="#" variant="primary">Enter Class</b-button>
+        </b-card>
       </b-list-group-item>
     </b-list-group>
   </div>
@@ -31,7 +31,7 @@ export default {
     courses: [
       {
         id: 0,
-        title: "./classroom.jpeg",
+        title: "COMM 101",
         imgSrc: "./classroom.jpeg",
         imgAlt: "Image",
         tag: "article",
@@ -39,8 +39,7 @@ export default {
       },
       {
         id: 1,
-        imageLocation: "./classroom.jpeg",
-        title: "./classroom.jpeg",
+        title: "CS 101",
         imgSrc: "./classroom.jpeg",
         imgAlt: "Image",
         tag: "article",
@@ -48,8 +47,7 @@ export default {
       },
       {
         id: 2,
-        imageLocation: "./classroom.jpeg",
-        title: "./classroom.jpeg",
+        title: "MATH 101",
         imgSrc: "./classroom.jpeg",
         imgAlt: "Image",
         tag: "article",
@@ -57,14 +55,13 @@ export default {
       },
       {
         id: 3,
-        title: "./classroom.jpeg",
+        title: "BIO 101",
         imgSrc: "./classroom.jpeg",
         imgAlt: "Image",
         tag: "article",
         class: "coursesContainer"
       }
     ]
-
   })
 };
 </script>
