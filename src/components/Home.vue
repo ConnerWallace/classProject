@@ -15,7 +15,6 @@
 import Calendar from './Calendar.vue'
 import Assignments from './Assignments.vue'
 import Button from './Button.vue'
-import axios from 'axios'
 export default {
   name: 'Home', //this is the name of the component,
   components: {
@@ -34,11 +33,11 @@ export default {
     },
     methods:{
       getData(){
-          axios({ method: "GET", "url": "http://localhost:8080/#/contacts" }).then(result => {
+          this.$http({ method: "GET", "url": "http://localhost:8080/#/contacts" }).then(result => {
                 this.text = result ;
           })},
       postData(sentData){
-        axios({ method: "POST", "url": "http://localhost:8080/#/contacts", sentData})
+        this.$http({ method: "POST", "url": "http://localhost:8080/#/contacts", sentData})
         },
   }
 }
