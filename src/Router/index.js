@@ -13,6 +13,7 @@ import Records from '@/components/Records'
 import Dlinks from '@/components/Dlinks'
 import UserLinks from '@/components/UserLinks'
 import Register from '@/components/Register'
+import InfoAdder from '@/components/InfoAdder'
 
 Vue.use(Router)
 
@@ -75,6 +76,11 @@ let router = new Router({
       path: '/dlinks',
       name: 'DirectLinks',
       component: Dlinks
+    },
+    {
+      path: '/infoAdder',
+      name: 'InfoAdder',
+      component: InfoAdder
     },
     {
       path: '/userlinks',
