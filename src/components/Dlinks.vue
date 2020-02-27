@@ -2,6 +2,7 @@
 <div id=dLinksContainer>
   <div>
   <Button/>
+  <user-links/>
   </div>
   
   

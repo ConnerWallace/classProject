@@ -6,7 +6,6 @@
   <div id=rightContainer>
     <Calendar/>
     <Assignments/>
-
   </div>
   
 </div>
@@ -16,6 +15,7 @@
 import Calendar from './Calendar.vue'
 import Assignments from './Assignments.vue'
 import Button from './Button.vue'
+import axios from 'axios'
 export default {
   name: 'Home', //this is the name of the component,
   components: {
@@ -23,32 +23,23 @@ export default {
     'Assignments': Assignments,
     'Button': Button,
     
-  }
-   ,data() {
+  },
+  data() {
     return {
-      links: [
-        {
-          id: 0,
-          text: 'Current Courses',
-          page:'/CurrentCourses'
+        text: ""
+      }
+    },
+    mounted(){
+      this.getData()
+    },
+    methods:{
+      getData(){
+          axios({ method: "GET", "url": "http://localhost:8080/#/contacts" }).then(result => {
+                this.text = result ;
+          })},
+      postData(sentData){
+        axios({ method: "POST", "url": "http://localhost:8080/#/contacts", sentData})
         },
-        {
-          id: 1,
-          text: 'Direct Links',
-          page:'/DirectLinks'
-        },
-        {
-          id: 2,
-          text: 'Records',
-          page:'/Records'
-        },
-        {
-          id: 3,
-          text: 'Contacts',
-          page:'/Contacts'
-        }
-      ]
-    }
   }
 }
 
