@@ -12,6 +12,7 @@ import Account from '@/components/Account'
 import Records from '@/components/Records'
 import Dlinks from '@/components/Dlinks'
 import UserLinks from '@/components/UserLinks'
+import Register from '@/components/Register'
 
 Vue.use(Router)
 
@@ -44,6 +45,11 @@ let router = new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register
     },
     {
       path: '/courses',
