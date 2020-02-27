@@ -216,7 +216,7 @@
             return { text: f.label, value: f.key }
           })
       }
-    },
+    }, 
     mounted() {
       // Set the initial number of items
       this.totalRows = this.items.length
