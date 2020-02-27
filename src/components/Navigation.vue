@@ -64,13 +64,18 @@ export default {
         },
         {
           id: 3,
-          text: 'Contact',
-          page:'/Contact'
+          text: 'Records',
+          page:'/Records'
         },
         {
           id: 4,
           text: 'Contacts',
           page:'/Contacts'
+        },
+        {
+          id: 5,
+          text: 'InfoAdder',
+          page:'/InfoAdder'
         }
       ]
     }
