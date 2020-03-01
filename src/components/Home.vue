@@ -28,17 +28,17 @@ export default {
         text: ""
       }
     },
-    mounted(){
-      this.getData()
+  mounted(){
+    this.getData()
+  },
+  methods:{
+    getData(){
+        this.$http({ method: "GET", "url": "http://localhost:3000/contacts" }).then(result => {
+              this.text = result ;
+        })},
+    postData(sentData){
+      this.$http({ method: "POST", "url": "http://localhost:8080/#/contacts", sentData})
     },
-    methods:{
-      getData(){
-          this.$http({ method: "GET", "url": "http://localhost:3000/contacts" }).then(result => {
-                this.text = result ;
-          })},
-      postData(sentData){
-        this.$http({ method: "POST", "url": "http://localhost:8080/#/contacts", sentData})
-        },
   }
 }
 
