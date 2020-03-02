@@ -12,6 +12,7 @@ import Account from '@/components/Account'
 import Records from '@/components/Records'
 import Dlinks from '@/components/Dlinks'
 import UserLinks from '@/components/UserLinks'
+import EnterInfo from '@/components/EnterInfo'
 
 Vue.use(Router)
 
@@ -74,6 +75,11 @@ let router = new Router({
       path: '/userlinks',
       name: 'UserLinks',
       component: UserLinks
+    },
+    {
+      path: '/enterinfo',
+      name: 'EnterInfo',
+      component: EnterInfo
     }
   ]
 })
