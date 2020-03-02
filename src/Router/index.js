@@ -13,6 +13,9 @@ import Records from '@/components/Records'
 import Dlinks from '@/components/Dlinks'
 import UserLinks from '@/components/UserLinks'
 import EnterInfo from '@/components/EnterInfo'
+import Register from '@/components/Register'
+import InfoAdder from '@/components/InfoAdder'
+import store from '../store.js'
 
 Vue.use(Router)
 
@@ -29,7 +32,7 @@ let router = new Router({
       component: Home,
       meta: { 
         requiresAuth: true
-    }
+      }
     },
     {
       path: '/about',
@@ -39,54 +42,99 @@ let router = new Router({
     {
       path: '/contact',
       name: 'Contact',
-      component: Contact
+      component: Contact,
+      meta: { 
+        requiresAuth: true
+      }
     },
     {
       path: '/login',
       name: 'Login',
-      component: Login
+      component: Login,
+      meta: { 
+        guest: true
+      }
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register,
+      meta: { 
+        guest: true
+      }
     },
     {
       path: '/courses',
       name: 'Courses',
-      component: Courses
+      component: Courses,
+      meta: { 
+        requiresAuth: true
+      }
     },
     {
       path: '/contacts',
       name: 'Contacts',
-      component: Contacts
+      component: Contacts,
+      meta: { 
+        requiresAuth: true
+      }
     },
     {
       path: '/account',
       name: 'Account',
-      component: Account
+      component: Account,
+      meta: { 
+        requiresAuth: true
+      }
     },
     {
       path: '/records',
       name: 'Records',
-      component: Records
+      component: Records,
+      meta: { 
+        requiresAuth: true
+      }
     },
     {
       path: '/dlinks',
       name: 'DirectLinks',
-      component: Dlinks
+      component: Dlinks,
+      meta: { 
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/infoAdder',
+      name: 'InfoAdder',
+      component: InfoAdder,
+      meta: { 
+        requiresAuth: true
+      }
     },
     {
       path: '/userlinks',
       name: 'UserLinks',
-      component: UserLinks
+      component: UserLinks,
+      meta: { 
+        requiresAuth: true
+      }
     },
     {
       path: '/enterinfo',
       name: 'EnterInfo',
       component: EnterInfo
     }
+    {
+      path: '/EditUserInfoBtn',
+      name: 'EditUserInfoBtn',
+      component: EditUserInfoBtn
+    }
   ]
 })
 
 router.beforeEach((to, from, next) => {
   if(to.matched.some(record => record.meta.requiresAuth)) {
-      if (localStorage.getItem('jwt') == null) {
+    if (!store.getters.isLoggedIn) {
           next({
               path: '/login',
               params: { nextUrl: to.fullPath }
@@ -98,18 +146,18 @@ router.beforeEach((to, from, next) => {
                   next()
               }
               else{
-                  next({ name: 'userboard'})
+                  next({ name: 'Home'})
               }
           }else {
               next()
           }
       }
   } else if(to.matched.some(record => record.meta.guest)) {
-      if(localStorage.getItem('jwt') == null){
+    if (!store.getters.isLoggedIn) {
           next()
       }
       else{
-          next({ name: 'userboard'})
+          next({ name: 'Home'})
       }
   }else {
       next() 
