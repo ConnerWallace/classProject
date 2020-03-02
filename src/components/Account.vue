@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import EditUserInfoBtn from './EditUserInfoBtn.vue'
 
 export default {
   name: 'Account', //this is the name of the component,

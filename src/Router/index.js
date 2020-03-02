@@ -15,6 +15,7 @@ import UserLinks from '@/components/UserLinks'
 import EnterInfo from '@/components/EnterInfo'
 import Register from '@/components/Register'
 import InfoAdder from '@/components/InfoAdder'
+import EditUserInfoBtn from '@/components/EditUserInfoBtn'
 import store from '../store.js'
 
 Vue.use(Router)
@@ -123,9 +124,9 @@ let router = new Router({
       path: '/enterinfo',
       name: 'EnterInfo',
       component: EnterInfo
-    }
+    },
     {
-      path: '/EditUserInfoBtn',
+      path: '/edituserinfobtn',
       name: 'EditUserInfoBtn',
       component: EditUserInfoBtn
     }
