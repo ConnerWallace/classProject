@@ -16,7 +16,13 @@
         </b-card>
       </b-list-group-item>
     </b-list-group>
+    <div id=buttonContainer>
+      <div>
+        <b-col lg="4" class="pb-2"><b-button size="lg" href="#/InfoAdder">Add Course</b-button></b-col>
+      </div>  
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -25,11 +31,18 @@
 //Classroom.jpeg <https://www.pexels.com/photo/abc-books-chalk-chalkboard-265076/>
 
 export default {
+  
   name: "Courses", //this is the name of the component,
   components: {},
   data () {
     return {
-
+      links: [
+        {
+          id: 0,
+          text: 'Add Course',
+          page:'/InfoAdder'
+        }
+      ],
       courses: [
         {
           id: 0,
@@ -85,5 +98,9 @@ export default {
 <style>
 .coursesContainer {
   max-width: 20rem;
+}
+#buttonContainer {
+  display: flex;
+  flex-direction: row;
 }
 </style>
