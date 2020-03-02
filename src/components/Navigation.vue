@@ -10,7 +10,6 @@
         <b-nav-item href="#/home">Home</b-nav-item>
         <b-nav-item href="#/contacts">Contacts</b-nav-item>
         <b-nav-item href="#/dlinks">Dlinks</b-nav-item>
-        <b-nav-item href="#" disabled>Disabled</b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
@@ -32,8 +31,11 @@
           <template v-slot:button-content>
             <em>User</em>
           </template>
-          <b-dropdown-item href="#/account">Profile</b-dropdown-item>
-          <b-dropdown-item href="#/login">Sign Out</b-dropdown-item>
+          
+            <b-dropdown-item href="#/account" v-if="isLoggedIn">Profile</b-dropdown-item>
+            <b-dropdown-item v-on:click="logout" v-if="isLoggedIn">Sign Out</b-dropdown-item>
+            <b-dropdown-item href="#/login" v-if="!isLoggedIn">Login</b-dropdown-item>
+            
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>
@@ -79,7 +81,18 @@ export default {
         }
       ]
     }
-  }
+  },
+  computed : {
+    isLoggedIn : function(){ return this.$store.getters.isLoggedIn}
+  },
+  methods: {
+    logout: function () {
+      this.$store.dispatch('logout')
+      .then(() => {
+        this.$router.push('/login')
+      })
+    }
+  },
 }
 </script>
 <style>

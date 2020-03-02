@@ -34,7 +34,7 @@ export default {
   methods:{
     getData(){
         this.$http({ method: "GET", "url": "http://localhost:3000/contacts" }).then(result => {
-              this.text = result ;
+              this.text = result.data ;
         })},
     postData(sentData){
       this.$http({ method: "POST", "url": "http://localhost:8080/#/contacts", sentData})
