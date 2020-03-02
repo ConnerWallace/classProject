@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div>
-                <button type="submit" @click="handleSubmit">
+                <button type="submit" @click="login">
                     Login
                 </button>
             </div>
@@ -29,38 +29,16 @@
                 password : ""
             }
         },
-        methods : {
-            handleSubmit(e){
-                e.preventDefault()
-                if (this.password.length > 0) {
-                    this.$http.post('http://localhost:3000/login', {
-                        email: this.email,
-                        password: this.password
-                    })
-                    .then(response => {
-                        let is_admin = response.data.user.is_admin
-                        localStorage.setItem('user',JSON.stringify(response.data.user))
-                        localStorage.setItem('jwt',response.data.token)
-
-                        if (localStorage.getItem('jwt') != null){
-                            this.$emit('loggedIn')
-                            if(this.$route.params.nextUrl != null){
-                                this.$router.push(this.$route.params.nextUrl)
-                            }
-                            else {
-                                if(is_admin== 1){
-                                    this.$router.push('admin')
-                                }
-                                else {
-                                    this.$router.push('home')
-                                }
-                            }
-                        }
-                    })
-                    .catch(function (error) {
-                        console.error(error.response);
-                    });
-                }
+        methods: {
+            login() {
+                let email = this.email 
+                let password = this.password
+                this.$store.dispatch('login', { email, password })
+                .then(() => this.$router.push('/home'))
+                .catch(err => {
+                    console.log(err);
+                    alert("invalid username or password")
+                })
             }
         }
     }
