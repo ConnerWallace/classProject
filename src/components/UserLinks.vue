@@ -1,6 +1,6 @@
 <template>
 <div align = "Left">
-   <b-col lg="4" class="pb-2"><b-button size="lg">Google Drive</b-button></b-col>
+   <b-col lg="4" class="pb-2"><b-button size="lg" href="https://drive.google.com/">Google Drive</b-button></b-col>
    <b-col lg="4" class="pb-2"><b-button size="lg">Other Links</b-button></b-col>
 </div>
 </template>
