@@ -8,8 +8,8 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item href="#/home">Home</b-nav-item>
+        <b-nav-item href="#/contacts">Contacts</b-nav-item>
         <b-nav-item href="#/dlinks">Dlinks</b-nav-item>
-        <b-nav-item href="#" disabled>Disabled</b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
@@ -31,8 +31,11 @@
           <template v-slot:button-content>
             <em>User</em>
           </template>
-          <b-dropdown-item href="#">Profile</b-dropdown-item>
-          <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+          
+            <b-dropdown-item href="#/account" v-if="isLoggedIn">Profile</b-dropdown-item>
+            <b-dropdown-item v-on:click="logout" v-if="isLoggedIn">Sign Out</b-dropdown-item>
+            <b-dropdown-item href="#/login" v-if="!isLoggedIn">Login</b-dropdown-item>
+            
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>
@@ -63,12 +66,33 @@ export default {
         },
         {
           id: 3,
-          text: 'Contact',
-          page:'/Contact'
+          text: 'Records',
+          page:'/Records'
+        },
+        {
+          id: 4,
+          text: 'Contacts',
+          page:'/Contacts'
+        },
+        {
+          id: 5,
+          text: 'InfoAdder',
+          page:'/InfoAdder'
         }
       ]
     }
-  }
+  },
+  computed : {
+    isLoggedIn : function(){ return this.$store.getters.isLoggedIn}
+  },
+  methods: {
+    logout: function () {
+      this.$store.dispatch('logout')
+      .then(() => {
+        this.$router.push('/login')
+      })
+    }
+  },
 }
 </script>
 <style>

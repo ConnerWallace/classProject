@@ -6,7 +6,6 @@
   <div id=rightContainer>
     <Calendar/>
     <Assignments/>
-
   </div>
   
 </div>
@@ -22,6 +21,24 @@ export default {
     'Calendar': Calendar,
     'Assignments': Assignments,
     'Button': Button,
+    
+  },
+  data() {
+    return {
+        text: ""
+      }
+    },
+  mounted(){
+    this.getData()
+  },
+  methods:{
+    getData(){
+        this.$http({ method: "GET", "url": "http://localhost:3000/contacts" }).then(result => {
+              this.text = result.data ;
+        })},
+    postData(sentData){
+      this.$http({ method: "POST", "url": "http://localhost:8080/#/contacts", sentData})
+    },
   }
 }
 
