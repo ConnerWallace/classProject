@@ -18,7 +18,7 @@
     </b-list-group>
     <div id=buttonContainer>
       <div>
-        <b-col lg="4" class="pb-2"><b-button size="lg" href="#/InfoAdder">Add Course</b-button></b-col>
+        <b-col lg="4" class="pb-2"><b-button size="lg" href="#/courseCreate">Add Course</b-button></b-col>
       </div>  
     </div>
   </div>
@@ -40,7 +40,7 @@ export default {
         {
           id: 0,
           text: 'Add Course',
-          page:'/InfoAdder'
+          page:'/courseCreate'
         }
       ],
       courses: [

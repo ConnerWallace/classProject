@@ -7,6 +7,7 @@ import About from '@/components/About'
 import Contact from '@/components/Contact'
 import Login from '@/components/Login'
 import Courses from '@/components/Courses'
+import CourseDetail from '@/components/CourseDetail'
 import Contacts from '@/components/Contacts'
 import Account from '@/components/Account'
 import Records from '@/components/Records'
@@ -14,7 +15,7 @@ import Dlinks from '@/components/Dlinks'
 import UserLinks from '@/components/UserLinks'
 import EnterInfo from '@/components/EnterInfo'
 import Register from '@/components/Register'
-import InfoAdder from '@/components/InfoAdder'
+import CourseCreate from '@/components/CourseCreate'
 import EditUserInfoBtn from '@/components/EditUserInfoBtn'
 import store from '../store.js'
 
@@ -105,9 +106,18 @@ let router = new Router({
       }
     },
     {
-      path: '/infoAdder',
-      name: 'InfoAdder',
-      component: InfoAdder,
+      path: '/courseCreate',
+      name: 'CourseCreate',
+      component: CourseCreate,
+      meta: { 
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/courseDetail/:id',
+      name: 'CourseCDetail;',
+      component: CourseDetail,
+      props: true,
       meta: { 
         requiresAuth: true
       }

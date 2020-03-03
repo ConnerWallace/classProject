@@ -7,6 +7,7 @@
         <p>phoneNumber: {{myPhoneNumber}}</p>
         <p>email: {{myEmail}}</p>
     </ul>
+    <edit-user-info-btn/>
 </div>
 </template>
 
@@ -16,6 +17,7 @@ import EditUserInfoBtn from './EditUserInfoBtn.vue'
 export default {
   name: 'Account', //this is the name of the component,
   components: {
+    EditUserInfoBtn: EditUserInfoBtn
   }
    ,data() {
     return {
