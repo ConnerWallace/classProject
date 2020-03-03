@@ -1,6 +1,9 @@
 <template>
   <div>
       {{id}}
+      {{name}}
+      {{department}}
+      {{departmentId}}
   </div>
 </template>
 
@@ -13,7 +16,7 @@ export default {
   
   name: "Courses", //this is the name of the component,
   components: {},
-  props: ['id'],
+  props: ['id', 'name', 'department', 'departmentId'],
   data () {
     return {
     }
@@ -23,12 +26,12 @@ export default {
   },
   methods:{
     getCourse(){
-        this.$http({ method: "GET", "url": "http://localhost:3000/course/"+this.id }).then(result => {
+        this.$http({ method: "GET", "url": "http://localhost:3000/course/"+this.id + this.name + this.department + this.departmentId}).then(result => {
               console.log(result)
               this.courses = result.data ;
         })},
     updateCourse(sentData){
-      this.$http({ method: "PUT", "url": "http://localhost:3000/courses/"+this.id, sentData})
+      this.$http({ method: "PUT", "url": "http://localhost:3000/courses/"+this.id + this.name + this.department + this.departmentId, sentData})
     },
   }
 };
