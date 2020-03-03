@@ -16,9 +16,14 @@ export default {
   
   name: "Courses", //this is the name of the component,
   components: {},
-  props: ['id', 'name', 'department', 'departmentId'],
+  props: ['id'],
   data () {
     return {
+      course:{
+        name: "softwareEngineering",
+        department: "Computer Science",
+        departmentId: "CS-231"
+      }
     }
   },
   mounted(){
@@ -26,12 +31,12 @@ export default {
   },
   methods:{
     getCourse(){
-        this.$http({ method: "GET", "url": "http://localhost:3000/course/"+this.id + this.name + this.department + this.departmentId}).then(result => {
+        this.$http({ method: "GET", "url": "http://localhost:3000/course/"+this.id }).then(result => {
               console.log(result)
               this.courses = result.data ;
         })},
     updateCourse(sentData){
-      this.$http({ method: "PUT", "url": "http://localhost:3000/courses/"+this.id + this.name + this.department + this.departmentId, sentData})
+      this.$http({ method: "PUT", "url": "http://localhost:3000/courses/"+this.id , sentData})
     },
   }
 };
