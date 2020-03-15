@@ -5,14 +5,13 @@
         id="input-group-1"
         label="Email address:"
         label-for="input-1"
-        description="We'll never share your email with anyone else."
       >
         <b-form-input
           id="input-1"
           v-model="form.email"
           type="email"
           required
-          placeholder="Enter email"
+          placeholder="Please enter your email"
         ></b-form-input>
       </b-form-group>
 
@@ -20,14 +19,13 @@
         id="input-group-2"
         label="Primary phone number:"
         label-for="input-2"
-        description="Needed in case of emergency."
       >
         <b-form-input
           id="input-2"
           v-model="form.phone"
           type="Phone number"
           required
-          placeholder="Enter your phone number"
+          placeholder="Please enter your phone number"
         ></b-form-input>
       </b-form-group>
 
@@ -36,7 +34,7 @@
           id="input-3"
           v-model="form.name"
           required
-          placeholder="Enter name"
+          placeholder="Please enter name"
         ></b-form-input>
       </b-form-group>
 
@@ -45,22 +43,21 @@
           id="input-4"
           v-model="form.birthday"
           required
-          placeholder="Enter your birthday"
+          placeholder="Please enter your birthday"
         ></b-form-input>
       </b-form-group>
-        biyatch
+      
       <b-form-group
         id="input-group-5"
         label="Emergency email address:"
         label-for="input-5"
-        description="We'll never share your email with anyone else."
       >
         <b-form-input
           id="input-5"
           v-model="form.email"
           type="email"
           required
-          placeholder="Enter email"
+          placeholder="Please enter email"
         ></b-form-input>
       </b-form-group>
 
@@ -68,14 +65,13 @@
         id="input-group-7"
         label="Emergency contact phone number:"
         label-for="input-7"
-        description="Needed in case of emergency."
       >
         <b-form-input
           id="input-7"
           v-model="form.phone"
           type="Phone number"
           required
-          placeholder="Enter emergency phone number"
+          placeholder="Please enter your emergency contact's phone number"
         ></b-form-input>
       </b-form-group>
 
@@ -84,7 +80,7 @@
           id="input-8"
           v-model="form.name"
           required
-          placeholder="Enter emergency contact name"
+          placeholder="Please enter your emergency contact's name"
         ></b-form-input>
       </b-form-group>
 
@@ -93,7 +89,7 @@
           id="input-9"
           v-model="form.Relation"
           :options="Relations"
-          required
+          required=false
         ></b-form-select>
       </b-form-group>
 

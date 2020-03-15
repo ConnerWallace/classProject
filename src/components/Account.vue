@@ -2,10 +2,10 @@
 <div>
     <ul>
         My Info
-        <p>sername: {{myUserName}}</p>
-        <p>display name: {{myFirstName + ' ' + myLastName}}</p>
-        <p>phoneNumber: {{myPhoneNumber}}</p>
-        <p>email: {{myEmail}}</p>
+        <p>Username: {{myUserName}}</p>
+        <p>Display Name: {{myFirstName + ' ' + myLastName}}</p>
+        <p>Phone Number: {{myPhoneNumber}}</p>
+        <p>Email Address: {{myEmail}}</p>
     </ul>
     <edit-user-info-btn/>
 </div>
