@@ -1,7 +1,7 @@
 <template>
   <div>
   <b-navbar toggleable="lg" type="light" variant="info">
-    <b-navbar-brand href="/">BettrBoard</b-navbar-brand>
+    <b-navbar-brand href="/">BetterBoard</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
