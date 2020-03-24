@@ -16,13 +16,14 @@
         </b-card>
       </b-list-group-item>
     </b-list-group>
-    <div id=buttonContainer>
+    <div id="buttonContainer">
       <div>
-        <b-col lg="4" class="pb-2"><b-button size="lg" href="#/courseCreate">Add Course</b-button></b-col>
-      </div>  
+        <b-col lg="4" class="pb-2">
+          <b-button size="lg" href="#/courseCreate">Add Course</b-button>
+        </b-col>
+      </div>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -31,67 +32,52 @@
 //Classroom.jpeg <https://www.pexels.com/photo/abc-books-chalk-chalkboard-265076/>
 
 export default {
-  
   name: "Courses", //this is the name of the component,
   components: {},
-  data () {
+  data() {
     return {
       links: [
         {
           id: 0,
-          text: 'Add Course',
-          page:'/courseCreate'
+          text: "Add Course",
+          page: "/courseCreate"
         }
       ],
-      courses: [
-        {
-          id: 0,
-          title: "COMM 101",
-          imgSrc: "./classroom.jpeg",
-          imgAlt: "Image",
-          tag: "article",
-          class: "coursesContainer"
-        },
-        {
-          id: 1,
-          title: "CS 101",
-          imgSrc: "./classroom.jpeg",
-          imgAlt: "Image",
-          tag: "article",
-          class: "coursesContainer"
-        },
-        {
-          id: 2,
-          title: "MATH 101",
-          imgSrc: "./classroom.jpeg",
-          imgAlt: "Image",
-          tag: "article",
-          class: "coursesContainer"
-        },
-        {
-          id: 3,
-          title: "BIO 101",
-          imgSrc: "./classroom.jpeg",
-          imgAlt: "Image",
-          tag: "article",
-          class: "coursesContainer"
+      courses: []
+    };
+  },
+  mounted() {
+    this.getCourses();
+  },
+  methods: {
+    getCourses() {
+      this.$http({ method: "GET", url: "http://localhost:3000/courses" }).then(
+        result => {
+          console.log(result);
+          const courseData = result.data;
+          let newCourses = [];
+          for (let i = 0; i < courseData.length; i++) {
+            let newCourse = {
+              id: courseData[i].id,
+              title: courseData[i].name,
+              imgSrc: "./classroom.jpeg",
+              imgAlt: "Image",
+              tag: "article",
+              class: "coursesContainer"
+            };
+            newCourses.push(newCourse);
+            this.courses = newCourses;
+          }
         }
-      ]
-    
-    }
-  },
-  mounted(){
-    this.getCourses()
-  },
-  methods:{
-    getCourses(){
-        this.$http({ method: "GET", "url": "http://localhost:3000/courses" }).then(result => {
-              console.log(result)
-              this.courses = result.data ;
-        })},
-    postCourses(sentData){
-      this.$http({ method: "POST", "url": "http://localhost:3000/courses", sentData})
+      );
     },
+    postCourses(sentData) {
+      this.$http({
+        method: "POST",
+        url: "http://localhost:3000/courses",
+        sentData
+      });
+    }
   }
 };
 </script>
