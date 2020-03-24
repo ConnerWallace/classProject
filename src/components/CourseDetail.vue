@@ -1,6 +1,9 @@
 <template>
   <div>
       {{id}}
+      {{name}}
+      {{department}}
+      {{departmentId}}
   </div>
 </template>
 
@@ -16,6 +19,11 @@ export default {
   props: ['id'],
   data () {
     return {
+      course:{
+        name: "softwareEngineering",
+        department: "Computer Science",
+        departmentId: "CS-231"
+      }
     }
   },
   mounted(){
@@ -28,7 +36,7 @@ export default {
               this.courses = result.data ;
         })},
     updateCourse(sentData){
-      this.$http({ method: "PUT", "url": "http://localhost:3000/courses/"+this.id, sentData})
+      this.$http({ method: "PUT", "url": "http://localhost:3000/courses/"+this.id , sentData})
     },
   }
 };

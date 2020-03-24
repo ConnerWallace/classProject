@@ -1,15 +1,17 @@
 <template>
   <div>
   <b-navbar toggleable="lg" type="light" variant="info">
-    <b-navbar-brand href="/">NavBar</b-navbar-brand>
+    <b-navbar-brand href="/">BettrBoard</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item href="#/home">Home</b-nav-item>
+        <b-nav-item href="#/courses">Courses</b-nav-item>
+        <b-nav-item href="#/dlinks">Links</b-nav-item>
+        <b-nav-item href="#/records">Records</b-nav-item>
         <b-nav-item href="#/contacts">Contacts</b-nav-item>
-        <b-nav-item href="#/dlinks">Dlinks</b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
@@ -19,7 +21,7 @@
           <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
         </b-nav-form>
 
-        <b-nav-item-dropdown text="Lang" right>
+        <b-nav-item-dropdown text="Language" right>
           <b-dropdown-item href="#">EN</b-dropdown-item>
           <b-dropdown-item href="#">ES</b-dropdown-item>
           <b-dropdown-item href="#">RU</b-dropdown-item>

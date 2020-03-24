@@ -1,5 +1,5 @@
 <template>
-  <VueCal :time="true" hide-weekends :events=events />
+  <VueCal :time-from="8 * 60" :time-to="19 * 60" :time-step="60" hide-weekends />
 </template>
 
 <script>
@@ -13,28 +13,28 @@ export default {
   data: () => ({
     events: [
       {
-        start: '2020-2-19 10:35',
-        end: '2020-2-19 11:30',
+        start: '2020-3-19 10:35',
+        end: '2020-3-19 11:30',
         title: 'Doctor appointment'
       },
       {
-        start: '2020-2-19 18:30',
-        end: '2020-2-19 19:15',
+        start: '2020-3-19 18:30',
+        end: '2020-3-19 19:15',
         title: 'Dentist appointment'
       },
       {
-        start: '2020-2-20 18:30',
-        end: '2020-2-20 20:30',
+        start: '2020-3-20 18:30',
+        end: '2020-3-20 20:30',
         title: 'Crossfit'
       },
       {
-        start: '2020-2-21 11:00',
-        end: '2020-2-21 13:00',
+        start: '2020-3-21 11:00',
+        end: '2020-3-21 13:00',
         title: 'Brunch with Jane'
       },
       {
-        start: '2020-2-21 19:30',
-        end: '2020-2-21 23:00',
+        start: '2020-3-21 19:30',
+        end: '2020-3-21 23:00',
         title: 'Swimming lesson'
       },
       {
