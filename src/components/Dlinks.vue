@@ -1,8 +1,7 @@
 <template>
 <div id=dLinksContainer>
   <div>
-  <Button/>
-  <user-links/>
+  <UserLinks/>
   </div>
   
   
