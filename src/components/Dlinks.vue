@@ -1,7 +1,7 @@
 <template>
 <div id=dLinksContainer>
   <div>
-  <UserLinks/>
+  <user-links/>
   </div>
   
   
@@ -24,6 +24,7 @@ export default {
 #dLinksContainer {
   display: flex;
   flex-direction: row;
+  margin-top: 1em;
 }
 
 </style>

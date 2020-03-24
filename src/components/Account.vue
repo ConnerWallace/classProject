@@ -1,39 +1,34 @@
 <template>
-<div>
+  <div>
     <ul>
-        My Info
-        <p>Username: {{myUserName}}</p>
-        <p>Display Name: {{myFirstName + ' ' + myLastName}}</p>
-        <p>Phone Number: {{myPhoneNumber}}</p>
-        <p>Email Address: {{myEmail}}</p>
+      <font size="5">My Info:</font>
+      <p>Display Name: {{myFirstName + ' ' + myLastName}}</p>
+      <p>Email: {{myEmail}}</p>
+      <p>Phone Number: {{myPhoneNumber}}</p>
     </ul>
-    <edit-user-info-btn/>
-</div>
+    <edit-user-info-btn />
+  </div>
 </template>
 
 <script>
-import EditUserInfoBtn from './EditUserInfoBtn.vue'
+import EditUserInfoBtn from "./EditUserInfoBtn.vue";
 
 export default {
-  name: 'Account', //this is the name of the component,
+  name: "Account", //this is the name of the component,
   components: {
     EditUserInfoBtn: EditUserInfoBtn
-  }
-   ,data() {
+  },
+  data() {
     return {
-      myUserName: "tomcruise7897",
-      myFirstName: "Tom",
-      myLastName: "Cruise",
+      myFirstName: "John",
+      myLastName: "Doe",
       myPhoneNumber: "555-5555",
-      myEmail: "tomcruise@email.com"  
-      
-    }
+      myEmail: "student@kettering.edu"
+    };
   }
-}
-
+};
 </script>
 
 
 <style>
-
 </style>

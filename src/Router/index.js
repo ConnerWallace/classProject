@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import HelloWorld from '@/components/HelloWorld'
+//import HelloWorld from '@/components/HelloWorld'
 import Home from '@/components/Home'
 import About from '@/components/About'
 import Contact from '@/components/Contact'
@@ -25,8 +25,11 @@ let router = new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'root',
+      component: Home,
+      meta: { 
+        requiresAuth: true
+      }
     },
     {
       path: '/home',
