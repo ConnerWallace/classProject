@@ -1,105 +1,137 @@
 <template>
   <div>
-    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+    <b-card bg-variant="light">
+    <b-form-group
+      label-cols-lg="3"
+      label="Your Information"
+      label-size="lg"
+      label-class="font-weight-bold pt-0"
+      class="mb-0"
+    >
       <b-form-group
-        id="input-group-1"
-        label="Email address:"
-        label-for="input-1"
-        description="We'll never share your email with anyone else."
+        label-cols-sm="3"
+        label="Email:"
+        label-align-sm="right"
+        label-for="nested-email"
       >
         <b-form-input
-          id="input-1"
-          v-model="form.email"
+          id="nested-email"
           type="email"
           required
-          placeholder="Enter email"
+          placeholder="Please enter your email"
         ></b-form-input>
       </b-form-group>
 
       <b-form-group
-        id="input-group-2"
-        label="Primary phone number:"
-        label-for="input-2"
-        description="Needed in case of emergency."
+        label-cols-sm="3"
+        label="Phone Number:"
+        label-align-sm="right"
+        label-for="nested-phone"
       >
         <b-form-input
-          id="input-2"
-          v-model="form.phone"
-          type="Phone number"
-          required
-          placeholder="Enter your phone number"
-        ></b-form-input>
-      </b-form-group>
-
-      <b-form-group id="input-group-3" label="Your Name:" label-for="input-2">
-        <b-form-input
-          id="input-3"
-          v-model="form.name"
-          required
-          placeholder="Enter name"
-        ></b-form-input>
-      </b-form-group>
-
-      <b-form-group id="input-group-4" label="Your birthday:" label-for="input-4">
-        <b-form-input
-          id="input-4"
-          v-model="form.birthday"
-          required
-          placeholder="Enter your birthday"
-        ></b-form-input>
-      </b-form-group>
-        biyatch
-      <b-form-group
-        id="input-group-5"
-        label="Emergency email address:"
-        label-for="input-5"
-        description="We'll never share your email with anyone else."
-      >
-        <b-form-input
-          id="input-5"
-          v-model="form.email"
-          type="email"
-          required
-          placeholder="Enter email"
+        id="nested-phone"
+        v-model="form.phone"
+        type="phone"
+        required
+        placeholder="Please enter your phone number"
         ></b-form-input>
       </b-form-group>
 
       <b-form-group
-        id="input-group-7"
-        label="Emergency contact phone number:"
-        label-for="input-7"
-        description="Needed in case of emergency."
+        label-cols-sm="3"
+        label="Name:"
+        label-align-sm="right"
+        label-for="nested-name"
       >
         <b-form-input
-          id="input-7"
-          v-model="form.phone"
-          type="Phone number"
-          required
-          placeholder="Enter emergency phone number"
+        id="nested-name"
+        v-model="form.name"
+        type="name"
+        required
+        placeholder="Please enter your name"
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group id="input-group-8" label="Emergency contact's Name:" label-for="input-8">
+      <b-form-group
+        label-cols-sm="3"
+        label="Birthday:"
+        label-align-sm="right"
+        label-for="nested-birthday"
+      >
         <b-form-input
-          id="input-8"
-          v-model="form.name"
-          required
-          placeholder="Enter emergency contact name"
+        id="nested-birthday"
+        v-model="form.birthday"
+        type="birthday"
+        required
+        placeholder="Please enter your birthday"
+        ></b-form-input>
+      </b-form-group>
+    </b-form-group>
+  </b-card>
+
+  <b-card bg-variant="light">
+    <b-form-group
+      label-cols-lg="3"
+      label="Emergency Contact Information"
+      label-size="lg"
+      label-class="font-weight-bold pt-0"
+      class="mb-0"
+    >
+      <b-form-group
+        label-cols-sm="3"
+        label="Emergency Contact's Email:"
+        label-align-sm="right"
+        label-for="nested-email-EM"
+      >
+        <b-form-input
+        id="nested-email-EM"
+        type="email-EM"
+        required
+        placeholder="Please enter emergency contact's email"
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group id="input-group-9" label="Relation:" label-for="input-9">
-        <b-form-select
-          id="input-9"
-          v-model="form.Relation"
-          :options="Relations"
-          required
-        ></b-form-select>
+      <b-form-group
+        label-cols-sm="3"
+        label="Contact's Phone Number:"
+        label-align-sm="right"
+        label-for="nested-phone-EM"
+      >
+        <b-form-input
+        id="nested-phone-EM"
+        type="phone"
+        required
+        placeholder="Please enter contact's phone number"
+        ></b-form-input>
       </b-form-group>
 
-      <b-button type="submit" variant="primary">Submit</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button>
-    </b-form>
+      <b-form-group
+        label-cols-sm="3"
+        label="Contact's Name:"
+        label-align-sm="right"
+        label-for="nested-name-EM"
+      >
+        <b-form-input
+        id="nested-name-EM"
+        type="name"
+        required
+        placeholder="Please enter contact's name"
+        ></b-form-input>
+      </b-form-group>
+
+      <b-form-group
+        label-cols-sm="3"
+        label="Relationship to You:"
+        label-align-sm="right"
+        label-for="nested-relationship-EM"
+      >
+        <b-form-select v-model="relations" :options="options" id="nested-relationship-EM"></b-form-select>
+      </b-form-group>
+    </b-form-group>
+  </b-card>
+
+      <b-button type="submit" pill variant="primary">Submit</b-button>
+      <b-button type="reset" pill variant="danger">Reset</b-button>
     <!--b-card class="mt-3" header="Form Data Result">
       <pre class="m-0">{{ form }}</pre>
     </b-card-->
@@ -111,13 +143,19 @@
     data() {
       return {
         form: {
-          email: '',
-          phone: '',
-          name: '',
-          relations: null,
-          birthday: null
         },
-        relations: [{ text: 'Select One', value: null }, 'Mother', 'Father', 'Sibling', 'Other'],
+        email: '',
+        phone: '',
+        name: '',
+        relations: null,
+        options: [
+          { value: null, text: 'Please select an option' },
+          { value: 'a', text: 'Mother' },
+          { value: 'b', text: 'Father' },
+          { value: 'c', text: 'Sibling' },
+          { value: 'd', text: 'Other'}
+        ],
+        birthday: '',
         show: true
       }
     },
@@ -132,7 +170,7 @@
         this.form.email = ''
         this.form.phone = ''
         this.form.name = ''
-        this.form.relations = null
+        this.form.relations = ''
         // Trick to reset/clear native browser form validation state
         this.show = false
         this.$nextTick(() => {

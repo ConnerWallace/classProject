@@ -1,7 +1,6 @@
 <template>
 <div id=dLinksContainer>
   <div>
-  <Button/>
   <user-links/>
   </div>
   
@@ -25,6 +24,7 @@ export default {
 #dLinksContainer {
   display: flex;
   flex-direction: row;
+  margin-top: 1em;
 }
 
 </style>
